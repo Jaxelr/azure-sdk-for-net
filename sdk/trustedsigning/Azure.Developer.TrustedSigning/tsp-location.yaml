@@ -1,6 +1,4 @@
-additionalDirectories:
-- --force
-directory: specification/trustedsigning/TrustedSigning
+directory: specification/trustedsigning/data-plane/TrustedSigning
 commit: 21990641d3c9effba7c3fecb4b0157998c44f3ee
 repo: Azure/azure-rest-api-specs
 

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetSigningStatusAsync(string,string,string,CancellationToken)">
+      <example>
+This sample shows how to call GetSigningStatusAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+Response<OperationStatusSignResultError> response = await client.GetSigningStatusAsync("YourAccountName", "YourCertificateProfileName", "9797c668-5b3c-4586-8e0c-2768c8160bad");
+]]></code></example>
+    </member>
+    <member name="GetSigningStatus(string,string,string,CancellationToken)">
+      <example>
+This sample shows how to call GetSigningStatus.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+Response<OperationStatusSignResultError> response = client.GetSigningStatus("YourAccountName", "YourCertificateProfileName", "9797c668-5b3c-4586-8e0c-2768c8160bad");
+]]></code></example>
+    </member>
+    <member name="GetSigningStatusAsync(string,string,string,RequestContext)">
+      <example>
+This sample shows how to call GetSigningStatusAsync and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+Response response = await client.GetSigningStatusAsync("YourAccountName", "YourCertificateProfileName", "9797c668-5b3c-4586-8e0c-2768c8160bad", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("status").ToString());
+]]></code></example>
+    </member>
+    <member name="GetSigningStatus(string,string,string,RequestContext)">
+      <example>
+This sample shows how to call GetSigningStatus and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+Response response = client.GetSigningStatus("YourAccountName", "YourCertificateProfileName", "9797c668-5b3c-4586-8e0c-2768c8160bad", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("status").ToString());
+]]></code></example>
+    </member>
+    <member name="GetSignRootCertificateAsync(string,string,CancellationToken)">
+      <example>
+This sample shows how to call GetSignRootCertificateAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+Response<BinaryData> response = await client.GetSignRootCertificateAsync("YourAccountName", "YourCertificateProfileName");
+]]></code></example>
+    </member>
+    <member name="GetSignRootCertificate(string,string,CancellationToken)">
+      <example>
+This sample shows how to call GetSignRootCertificate.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+Response<BinaryData> response = client.GetSignRootCertificate("YourAccountName", "YourCertificateProfileName");
+]]></code></example>
+    </member>
+    <member name="GetSignRootCertificateAsync(string,string,RequestContext)">
+      <example>
+This sample shows how to call GetSignRootCertificateAsync and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+Response response = await client.GetSignRootCertificateAsync("YourAccountName", "YourCertificateProfileName", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code></example>
+    </member>
+    <member name="GetSignRootCertificate(string,string,RequestContext)">
+      <example>
+This sample shows how to call GetSignRootCertificate and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+Response response = client.GetSignRootCertificate("YourAccountName", "YourCertificateProfileName", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code></example>
+    </member>
+    <member name="GetExtendedKeyUsagesAsync(string,string,CancellationToken)">
+      <example>
+This sample shows how to call GetExtendedKeyUsagesAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+await foreach (ExtendedKeyUsage item in client.GetExtendedKeyUsagesAsync("YourAccountName", "YourCertificateProfileName"))
+{
+}
+]]></code></example>
+    </member>
+    <member name="GetExtendedKeyUsages(string,string,CancellationToken)">
+      <example>
+This sample shows how to call GetExtendedKeyUsages.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+foreach (ExtendedKeyUsage item in client.GetExtendedKeyUsages("YourAccountName", "YourCertificateProfileName"))
+{
+}
+]]></code></example>
+    </member>
+    <member name="GetExtendedKeyUsagesAsync(string,string,RequestContext)">
+      <example>
+This sample shows how to call GetExtendedKeyUsagesAsync and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+await foreach (BinaryData item in client.GetExtendedKeyUsagesAsync("YourAccountName", "YourCertificateProfileName", null))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("eku").ToString());
+}
+]]></code></example>
+    </member>
+    <member name="GetExtendedKeyUsages(string,string,RequestContext)">
+      <example>
+This sample shows how to call GetExtendedKeyUsages and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+foreach (BinaryData item in client.GetExtendedKeyUsages("YourAccountName", "YourCertificateProfileName", null))
+{
+    JsonElement result = JsonDocument.Parse(item.ToStream()).RootElement;
+    Console.WriteLine(result.GetProperty("eku").ToString());
+}
+]]></code></example>
+    </member>
+    <member name="SignAsync(WaitUntil,string,string,SigningPayloadOptions,string,string,CancellationToken)">
+      <example>
+This sample shows how to call SignAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+SigningPayloadOptions body = new SigningPayloadOptions(SignatureAlgorithm.RS256, BinaryData.FromObjectAsJson("TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQ="))
+{
+    FileHashList = { BinaryData.FromObjectAsJson("Y29uc2VjdGV0dXIgYWRpcGlzY2luZyBlbGl0"), BinaryData.FromObjectAsJson("c2VkIGRvIGVpdXNtb2QgdGVtcG9yIGluY2lkaWR1bnQ=") },
+    AuthenticodeHashList = { BinaryData.FromObjectAsJson("dXQgbGFib3JlIGV0IGRvbG9yZSBtYWduYSBhbGlxdWE="), BinaryData.FromObjectAsJson("IFV0IGVuaW0gYWQgbWluaW0gdmVuaWFt") },
+};
+Operation<SignResult> operation = await client.SignAsync(WaitUntil.Completed, "YourAccountName", "YourCertificateProfileName", body);
+SignResult responseData = operation.Value;
+]]></code></example>
+    </member>
+    <member name="Sign(WaitUntil,string,string,SigningPayloadOptions,string,string,CancellationToken)">
+      <example>
+This sample shows how to call Sign.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+SigningPayloadOptions body = new SigningPayloadOptions(SignatureAlgorithm.RS256, BinaryData.FromObjectAsJson("TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQ="))
+{
+    FileHashList = { BinaryData.FromObjectAsJson("Y29uc2VjdGV0dXIgYWRpcGlzY2luZyBlbGl0"), BinaryData.FromObjectAsJson("c2VkIGRvIGVpdXNtb2QgdGVtcG9yIGluY2lkaWR1bnQ=") },
+    AuthenticodeHashList = { BinaryData.FromObjectAsJson("dXQgbGFib3JlIGV0IGRvbG9yZSBtYWduYSBhbGlxdWE="), BinaryData.FromObjectAsJson("IFV0IGVuaW0gYWQgbWluaW0gdmVuaWFt") },
+};
+Operation<SignResult> operation = client.Sign(WaitUntil.Completed, "YourAccountName", "YourCertificateProfileName", body);
+SignResult responseData = operation.Value;
+]]></code></example>
+    </member>
+    <member name="SignAsync(WaitUntil,string,string,RequestContent,string,string,RequestContext)">
+      <example>
+This sample shows how to call SignAsync and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+using RequestContent content = RequestContent.Create(new
+{
+    signatureAlgorithm = "RS256",
+    digest = "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQ=",
+    fileHashList = new object[]
+    {
+        "Y29uc2VjdGV0dXIgYWRpcGlzY2luZyBlbGl0",
+        "c2VkIGRvIGVpdXNtb2QgdGVtcG9yIGluY2lkaWR1bnQ="
+    },
+    authenticodeHashList = new object[]
+    {
+        "dXQgbGFib3JlIGV0IGRvbG9yZSBtYWduYSBhbGlxdWE=",
+        "IFV0IGVuaW0gYWQgbWluaW0gdmVuaWFt"
+    },
+});
+Operation<BinaryData> operation = await client.SignAsync(WaitUntil.Completed, "YourAccountName", "YourCertificateProfileName", content);
+BinaryData responseData = operation.Value;
+
+JsonElement result = JsonDocument.Parse(responseData.ToStream()).RootElement;
+Console.WriteLine(result.ToString());
+]]></code></example>
+    </member>
+    <member name="Sign(WaitUntil,string,string,RequestContent,string,string,RequestContext)">
+      <example>
+This sample shows how to call Sign and parse the result.
+<code><![CDATA[
+Uri endpoint = new Uri("<endpoint>");
+TokenCredential credential = new DefaultAzureCredential();
+CertificateProfile client = new TrustedSigningClient(endpoint, credential).GetCertificateProfileClient(apiVersion: "2023-06-15-preview");
+
+using RequestContent content = RequestContent.Create(new
+{
+    signatureAlgorithm = "RS256",
+    digest = "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQ=",
+    fileHashList = new object[]
+    {
+        "Y29uc2VjdGV0dXIgYWRpcGlzY2luZyBlbGl0",
+        "c2VkIGRvIGVpdXNtb2QgdGVtcG9yIGluY2lkaWR1bnQ="
+    },
+    authenticodeHashList = new object[]
+    {
+        "dXQgbGFib3JlIGV0IGRvbG9yZSBtYWduYSBhbGlxdWE=",
+        "IFV0IGVuaW0gYWQgbWluaW0gdmVuaWFt"
+    },
+});
+Operation<BinaryData> operation = client.Sign(WaitUntil.Completed, "YourAccountName", "YourCertificateProfileName", content);
+BinaryData responseData = operation.Value;
+
+JsonElement result = JsonDocument.Parse(responseData.ToStream()).RootElement;
+Console.WriteLine(result.ToString());
+]]></code></example>
+    </member>
+  </members>
+</doc>
