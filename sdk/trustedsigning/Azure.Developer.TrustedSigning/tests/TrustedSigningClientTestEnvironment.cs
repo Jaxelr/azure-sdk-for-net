@@ -8,7 +8,7 @@ namespace Azure.Developer.TrustedSigning.Tests
     public class TrustedSigningClientTestEnvironment : TestEnvironment
     {
         public string Endpoint => GetRecordedVariable("TrustedSigning_ENDPOINT");
-
-        // Add other client paramters here as above.
+        public string AccountName => GetRecordedVariable("TrustedSigning_ACCOUNT_NAME");
+        public string ProfileName => GetRecordedVariable("TrustedSigning_PROFILE_NAME");
     }
 }
